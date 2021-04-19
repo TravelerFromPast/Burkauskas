@@ -1,17 +1,16 @@
 <?php
 namespace Burkauskas;
 
-Class A
+Class Equation
 {
-    public function lin($a, $b)
+    public function solveL($a, $b)
     {
         if($a==0)
         {
-            throw new BurkauskasException(null);
+            throw new BurkauskasException('Уравнение не имеет решений');
         }
         MyLog::log("Определено что это линейное уравнение");
         return $this->x=array(-($b/$a));
     }
     protected $x;
 }
-?>

@@ -6,23 +6,23 @@ use core\EquationInterface;
 Class QuEquation extends Equation implements EquationInterface{
 
 
-	public function qu_solve($a, $b, $c){
+	public function solve(float $a, float $b, float $c): array{
 
 		$x = $this->dis($a, $b, $c);
 
 	    if($a == 0){
-	        return $this->solve($b,$c);
+	        return $this->solveL($b,$c);
 	    }
 
 		if ($x > 0){
-		    return $this->X=array(
+		    return $this->x=array(
 		        -($b+sqrt($b**2-4*$a*$c)/2*$a), 
 		        -($b-sqrt($b**2-4*$a*$c)/2*$a)
 		        );
 		}
 
 		if($x == 0){
-			return $this->X=array(-($b/2*$a));
+			return $this->x=array(-($b/2*$a));
 		}
 
 		throw new BurkauskasException("Ошибка: уравнение не имеет корней.");
@@ -31,6 +31,5 @@ Class QuEquation extends Equation implements EquationInterface{
 	protected function dis($a, $b, $c){
         return $a = ($b**2)-4*$a*$c;
     }
-}
 
-?>
+}
