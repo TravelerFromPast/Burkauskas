@@ -16,8 +16,8 @@ Class QuEquation extends Equation implements EquationInterface{
 
 		if ($x > 0){
 		    return $this->x=array(
-		        -($b+sqrt($b**2-4*$a*$c)/2*$a), 
-		        -($b-sqrt($b**2-4*$a*$c)/2*$a)
+                (-$b+sqrt($x))/(2*$a),
+                (-$b-sqrt($x))/(2*$a)
 		        );
 		}
 
